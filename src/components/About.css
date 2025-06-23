@@ -1,0 +1,87 @@
+.about {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #24243e, #302b63);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  .about:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(255, 107, 107, 0.3);
+  }
+  
+  .about-content {
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .about-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    background: #1a1a2e;
+    padding: 25px;
+    border-radius: 15px;
+    border-left: 5px solid #4ecdc4;
+    position: relative;
+    animation: slideIn 1.5s ease forwards;
+    transition: all 0.3s ease;
+  }
+  
+  .about-text::before {
+    content: '>';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6b6b;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, left 0.3s ease;
+  }
+  
+  .about-text:hover::before {
+    opacity: 1;
+    left: 15px;
+  }
+  
+  .about-text::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 107, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .about-text:hover::after {
+    opacity: 1;
+    animation: sweepLight 2s infinite ease-in-out;
+  }
+  
+  .about-text:hover {
+    color: #ff6b6b;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.5);
+    transform: translateX(10px);
+  }
+  
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes sweepLight {
+    0% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+    100% { transform: translateX(100%); }
+  }
