@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import './Navbar.css';
-import profilePhoto from '../assets/profile-photo.JPG';
+import profilePhoto from '../../assets/profile-photo.jpg';
 
 function Navbar() {
   const [isPhotoExpanded, setIsPhotoExpanded] = useState(false);

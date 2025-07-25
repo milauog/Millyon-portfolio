@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.projects {
+  background: linear-gradient(135deg, #1e1e3f, #2a2a5e);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  padding: 50px 30px;
+  margin: 40px auto;
+  max-width: 1400px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+.projects-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #ff6b6b;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+}
+
+.projects-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.project-card {
+  background: rgba(26, 26, 46, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px 25px;
+  border-radius: 15px;
+  width: 320px;
+  max-width: 100%;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 107, 107, 0.5);
+}
+
+.project-card strong {
+  font-size: 1.5rem;
+  color: #ff6b6b;
+  margin-bottom: 10px;
+  text-align: center;
+  display: block;
+}
+
+.card-description {
+  color: #ccc;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.tech-icon .language-icon {
+  font-size: 1.5rem;
+  color: #4ecdc4;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.tech-icon:hover .language-icon {
+  transform: scale(1.2);
+  color: #ff6b6b;
+}
+
+/* Popup */
+.project-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+.project-popup {
+  background: rgba(26, 26, 46, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+  position: relative;
+  transform: scale(0.9);
+  animation: popupIn 0.3s ease forwards;
+}
+
+.project-popup h3 {
+  text-align: center;
+  color: #ff6b6b;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.popup-description {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.popup-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.project-screenshot {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #4ecdc4;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-screenshot:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.popup-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.popup-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.view-button {
+  background: #ff6b6b;
+  color: #fff;
+}
+
+.view-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.7);
+}
+
+.code-button {
+  background: #4ecdc4;
+  color: #1a1a2e;
+}
+
+.code-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(78, 205, 196, 0.7);
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+  color: #4ecdc4;
+}
+
+/* Enlarged Image */
+.enlarged-image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.enlarged-image {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 12px;
+  border: 3px solid #4ecdc4;
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popupIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .projects {
+    padding: 30px 20px;
+  }
+
+  .projects-title {
+    font-size: 2.2rem;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-popup h3 {
+    font-size: 1.7rem;
+  }
+}
+.project-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.project-features, .project-tech-stack {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(40, 40, 70, 0.7);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-features h4, .project-tech-stack h4 {
+  color: #4ecdc4;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.project-features ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.project-features li {
+  color: #e0e0e0;
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+  line-height: 1.5;
+}
+
+.project-features li:before {
+  content: "•";
+  color: #ff6b6b;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+  top: 2px;
+}
+
+.tech-stack-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.tech-stack-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80px;
+}
+
+.tech-stack-icon {
+  font-size: 1.8rem;
+  color: #ff6b6b;
+  margin-bottom: 8px;
+}
+
+.tech-stack-item span:last-child {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+/* Add this to your existing Projects.css */
+.language-icon.java {
+  color: #007396;
+}
+
+.tech-stack-icon.angular {
+  color: #DD0031;
+}
+
+.tech-stack-icon.spring {
+  color: #6DB33F;
+}
+
+.tech-stack-icon.mysql {
+  color: #4479A1;
+}
+
+.tech-stack-icon.auth {
+  color: #FFD700;
+}
