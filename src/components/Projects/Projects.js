@@ -54,7 +54,9 @@ const Projects = ({ setActiveSection }) => {
       ],
       liveLink: '#',
       codeLink: 'https://github.com/milauog/inventory-management-backend',
-      hasImages: false,
+            images: ['inventory1.png', 'inventory22.png', 'signin.png'],
+
+      hasImages: true,
       techStack: [
         { name: 'Angular', icon: <FaAngular />, color: '220, 53, 69' },
         { name: 'NG-ZORRO', icon: <FaAngular />, color: '220, 53, 69' },
