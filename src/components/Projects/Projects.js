@@ -160,9 +160,11 @@ const Projects = ({ setActiveSection }) => {
         'Multiple currency support',
         'Offline caching',
       ],
-      liveLink: '#',
-      codeLink: 'https://github.com/milauog/currency-converter',
-      hasImages: false,
+      liveLink: 'https://currency-converter-41c0c.web.app/',
+      codeLink: 'https://github.com/milauog/currency-converter-backend',
+            images: ['currency1.png', 'currency2.png', 'currency3.png'],
+
+      hasImages: true,
       techStack: [
         { name: 'ExchangeRate API', icon: <FaServer />, color: '100, 100, 100' },
         { name: 'Chart.js', icon: <FaChartLine />, color: '255, 99, 132' },
